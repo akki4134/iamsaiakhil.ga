@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import Paper from '@material-ui/core/Paper';
+
 import Box from '@material-ui/core/Box';
 import Slide from '@material-ui/core/Slide';
 import Button from '@material-ui/core/Button';
@@ -102,9 +104,6 @@ theme.typography.h5 = {
 const useStyles = makeStyles((theme) => ({
     background: {
         background: 'linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%)',
-        maxHeight: '90vh',
-
-
     },
     box: {
         [theme.breakpoints.down('xs')]: {
@@ -397,215 +396,213 @@ export default function About() {
     return (
         <div>
             <ThemeProvider theme={theme}>
-                <Box className={classes.background}>
-                    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" m={1} p={1}>
-                        <Typography variant="h1">Know About Me</Typography>
-                        <Typography variant="h3">Full Stack Developer</Typography>
+
+                <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" m={1} p={1}>
+                    <Typography variant="h1">Know About Me</Typography>
+                    <Typography variant="h3">Full Stack Developer</Typography>
+                </Box>
+                <Box className={classes.box} >
+                    <Box  >
+                        <Button className={classes.bottom} value='about' onClick={() => Slidestate('about')}  > About</Button>
                     </Box>
-                    <Box className={classes.box} >
-                        <Box  >
-                            <Button className={classes.bottom} value='about' onClick={() => Slidestate('about')}  > About</Button>
-                        </Box>
-                        <Box>
-                            <Button className={classes.bottom} value='skills' onClick={() => Slidestate('skills')}  > Skills </Button>
-                        </Box>
-                        <Box>
-                            <Button className={classes.bottom} value='experiance' onClick={() => Slidestate('experiance')}  > Experiance </Button>
-                        </Box>
-                        <Box>
-                            <Button className={classes.bottom} value='projects' onClick={() => Slidestate('projects')}  > Projects </Button>
-                        </Box>
-
-                    </Box>
-
-
-
                     <Box>
-                        <Slide direction="right" timeout={1000} in={aboutState}>
-                            <Box className={classes.bgslidebox1} >
-                                About Me
-                            </Box>
-                        </Slide>
-                        <Slide direction="up" timeout={800} in={aboutState}>
-                            <Box className={classes.bgicon} >
-                                <AccountCircleOutlinedIcon fontSize="large" style={{ fontSize: 100, }} />
-                            </Box>
-                        </Slide>
-
-
-                        <Slide direction="down" timeout={1000} in={aboutState} mountOnEnter unmountOnExit>
-                            <Box className={classes.slidebox1} >
-                                <Typography style={{ margin: '5px' }} variant="h3"> M.E.R.N Stack Developer</Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">
-                                    I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
-                                    I'm a weird guy who likes making weird things with web technologies.
-                                </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">
-                                    I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
-                                    When not working or futzing around with code.
-                                </Typography>
-
-                            </Box>
-                        </Slide>
-                        <Slide direction="left" timeout={1000} in={aboutState}>
-                            <Box className={classes.bgslidebox2} >
-                                Contact
-                            </Box>
-                        </Slide>
-                        <Slide direction="up" timeout={1000} in={aboutState} mountOnEnter unmountOnExit>
-                            <Box className={classes.slidebox2} >
-                                <Typography style={{ margin: '5px' }} variant="h3"> Personal Details </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
-                            </Box>
-                        </Slide>
+                        <Button className={classes.bottom} value='skills' onClick={() => Slidestate('skills')}  > Skills </Button>
                     </Box>
-
-
                     <Box>
-                        <Slide direction="right" timeout={1000} in={skillsState}>
-                            <Box className={classes.bgslidebox1} >
-                                Techno-
-                            </Box>
-                        </Slide>
-                        <Slide direction="up" timeout={800} in={skillsState}>
-                            <Box className={classes.bgicon} >
-                                <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
-                            </Box>
-                        </Slide>
-
-
-                        <Slide direction="down" timeout={1000} in={skillsState} mountOnEnter unmountOnExit>
-                            <Box className={classes.slidebox1} >
-                                <Typography style={{ margin: '5px' }} variant="h3"> Development </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">
-                                    I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
-                                    I'm a weird guy who likes making weird things with web technologies.
-                                </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">
-                                    I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
-                                    When not working or futzing around with code.
-                                </Typography>
-                                <Icon className="fa fa-css3" fontSize="large" style={{ fontSize: 100, }} />
-
-                            </Box>
-                        </Slide>
-                        <Slide direction="left" timeout={1000} in={skillsState}>
-                            <Box className={classes.bgslidebox2} >
-                                Skills-
-                            </Box>
-                        </Slide>
-                        <Slide direction="up" timeout={1000} in={skillsState} mountOnEnter unmountOnExit>
-                            <Box className={classes.slidebox2} >
-                                <Typography style={{ margin: '5px' }} variant="h3"> Deployment </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
-                            </Box>
-                        </Slide>
+                        <Button className={classes.bottom} value='experiance' onClick={() => Slidestate('experiance')}  > Experiance </Button>
                     </Box>
-
-
-
                     <Box>
-                        <Slide direction="right" timeout={1000} in={expState}>
-                            <Box className={classes.bgslidebox1} >
-                                Clorder
-                            </Box>
-                        </Slide>
-                        <Slide direction="up" timeout={800} in={expState}>
-                            <Box className={classes.bgicon} >
-                                <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
-                            </Box>
-                        </Slide>
-
-
-                        <Slide direction="down" timeout={1000} in={expState} mountOnEnter unmountOnExit>
-                            <Box className={classes.slidebox1} >
-                                <Typography style={{ margin: '5px' }} variant="h3"> Development </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">
-                                    I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
-                                    I'm a weird guy who likes making weird things with web technologies.
-                                </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">
-                                    I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
-                                    When not working or futzing around with code.
-                                </Typography>
-                            </Box>
-                        </Slide>
-                        <Slide direction="left" timeout={1000} in={expState}>
-                            <Box className={classes.bgslidebox2} >
-                                HYQ
-                            </Box>
-                        </Slide>
-                        <Slide direction="up" timeout={1000} in={expState} mountOnEnter unmountOnExit>
-                            <Box className={classes.slidebox2} >
-                                <Typography style={{ margin: '5px' }} variant="h3"> Deployment </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
-                            </Box>
-                        </Slide>
+                        <Button className={classes.bottom} value='projects' onClick={() => Slidestate('projects')}  > Projects </Button>
                     </Box>
-
-
-
-
-
-                    <Box>
-                        <Slide direction="right" timeout={1000} in={projectState}>
-                            <Box className={classes.bgslidebox1} >
-                                Official
-                            </Box>
-                        </Slide>
-                        <Slide direction="up" timeout={800} in={projectState}>
-                            <Box className={classes.bgicon} >
-                                <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
-                            </Box>
-                        </Slide>
-
-
-                        <Slide direction="down" timeout={1000} in={projectState} mountOnEnter unmountOnExit>
-                            <Box className={classes.slidebox1} >
-                                <Typography style={{ margin: '5px' }} variant="h3"> Development </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">
-                                    I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
-                                    I'm a weird guy who likes making weird things with web technologies.
-                                </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">
-                                    I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
-                                    When not working or futzing around with code.
-                                </Typography>
-
-                            </Box>
-                        </Slide>
-                        <Slide direction="left" timeout={1000} in={projectState}>
-                            <Box className={classes.bgslidebox2} >
-                                Personal
-                            </Box>
-                        </Slide>
-                        <Slide direction="up" timeout={1000} in={projectState} mountOnEnter unmountOnExit>
-                            <Box className={classes.slidebox2} >
-                                <Typography style={{ margin: '5px' }} variant="h3"> Deployment </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
-                                <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
-                            </Box>
-                        </Slide>
-                    </Box>
-
-
 
                 </Box>
+
+
+                <Paper>
+                    <Slide direction="right" timeout={1000} in={aboutState}>
+                        <Paper elevation={0} className={classes.bgslidebox1} >
+                            About Me
+                        </Paper>
+                    </Slide>
+                    <Slide direction="right" timeout={800} in={aboutState}>
+                        <Paper elevation={0} className={classes.bgicon} >
+                            <AccountCircleOutlinedIcon fontSize="large" style={{ fontSize: 100, }} />
+                        </Paper>
+                    </Slide>
+
+
+                    <Slide direction="right" timeout={1000} in={aboutState} mountOnEnter unmountOnExit>
+                        <Paper elevation={0} className={classes.slidebox1} >
+                            <Typography style={{ margin: '5px' }} variant="h3"> M.E.R.N Stack Developer</Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">
+                                I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
+                                I'm a weird guy who likes making weird things with web technologies.
+                            </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">
+                                I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
+                                When not working or futzing around with code.
+                            </Typography>
+
+                        </Paper>
+                    </Slide>
+                    <Slide direction="down" timeout={1000} in={aboutState}>
+                        <Paper elevation={0} className={classes.bgslidebox2} >
+                            Contact
+                        </Paper>
+                    </Slide>
+                    <Slide direction="down" timeout={1000} in={aboutState} mountOnEnter unmountOnExit>
+                        <Paper elevation={0} className={classes.slidebox2} >
+                            <Typography style={{ margin: '5px' }} variant="h3"> Personal Details </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
+                        </Paper>
+                    </Slide>
+                </Paper>
+
+
+
+
+                <Paper>
+                    <Slide direction="right" timeout={1000} in={skillsState}>
+                        <Paper elevation={0} className={classes.bgslidebox1} >
+                            Techno-
+                        </Paper>
+                    </Slide>
+                    <Slide direction="right" timeout={800} in={skillsState}>
+                        <Paper elevation={0} className={classes.bgicon} >
+                            <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
+                        </Paper>
+                    </Slide>
+                    <Slide direction="right" timeout={1000} in={skillsState} mountOnEnter unmountOnExit>
+                        <Paper elevation={0} className={classes.slidebox1} >
+                            <Typography style={{ margin: '5px' }} variant="h3"> Development </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">
+                                I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
+                                I'm a weird guy who likes making weird things with web technologies.
+                            </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">
+                                I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
+                                When not working or futzing around with code.
+                            </Typography>
+                            <Icon className="fa fa-css3" fontSize="large" style={{ fontSize: 100, }} />
+
+                        </Paper>
+                    </Slide>
+                    <Slide direction="down" timeout={1000} in={skillsState}>
+                        <Paper elevation={0} className={classes.bgslidebox2} >
+                            Skills-
+                        </Paper>
+                    </Slide>
+                    <Slide direction="down" timeout={1000} in={skillsState} mountOnEnter unmountOnExit>
+                        <Paper elevation={0} className={classes.slidebox2} >
+                            <Typography style={{ margin: '5px' }} variant="h3"> Deployment </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
+                        </Paper>
+                    </Slide>
+                </Paper>
+
+
+
+
+                <Paper>
+                    <Slide direction="right" timeout={1000} in={expState}>
+                        <Paper elevation={0} className={classes.bgslidebox1} >
+                            Clorder
+                        </Paper>
+                    </Slide>
+                    <Slide direction="right" timeout={800} in={expState}>
+                        <Paper elevation={0} className={classes.bgicon} >
+                            <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
+                        </Paper>
+                    </Slide>
+                    <Slide direction="right" timeout={1000} in={expState} mountOnEnter unmountOnExit>
+                        <Paper elevation={0} className={classes.slidebox1} >
+                            <Typography style={{ margin: '5px' }} variant="h3"> Clorder Technologies </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">
+                                I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
+                                I'm a weird guy who likes making weird things with web technologies.
+                            </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">
+                                I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
+                                When not working or futzing around with code.
+                            </Typography>
+                            <Icon className="fa fa-css3" fontSize="large" style={{ fontSize: 100, }} />
+
+                        </Paper>
+                    </Slide>
+                    <Slide direction="down" timeout={1000} in={expState}>
+                        <Paper elevation={0} className={classes.bgslidebox2} >
+                            HYQ
+                        </Paper>
+                    </Slide>
+                    <Slide direction="down" timeout={1000} in={expState} mountOnEnter unmountOnExit>
+                        <Paper elevation={0} className={classes.slidebox2} >
+                            <Typography style={{ margin: '5px' }} variant="h3"> HYD India </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
+                        </Paper>
+                    </Slide>
+                </Paper>
+
+
+
+
+
+                <Paper>
+                    <Slide direction="right" timeout={1000} in={projectState}>
+                        <Paper elevation={0} className={classes.bgslidebox1} >
+                            Official
+                        </Paper>
+                    </Slide>
+                    <Slide direction="right" timeout={800} in={projectState}>
+                        <Paper elevation={0} className={classes.bgicon} >
+                            <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
+                        </Paper>
+                    </Slide>
+                    <Slide direction="right" timeout={1000} in={projectState} mountOnEnter unmountOnExit>
+                        <Paper elevation={0} className={classes.slidebox1} >
+                            <Typography style={{ margin: '5px' }} variant="h3"> Projects Alpha </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">
+                                I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
+                                I'm a weird guy who likes making weird things with web technologies.
+                            </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">
+                                I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
+                                When not working or futzing around with code.
+                            </Typography>
+                            <Icon className="fa fa-css3" fontSize="large" style={{ fontSize: 100, }} />
+
+                        </Paper>
+                    </Slide>
+                    <Slide direction="down" timeout={1000} in={projectState}>
+                        <Paper elevation={0} className={classes.bgslidebox2} >
+                            Personal
+                        </Paper>
+                    </Slide>
+                    <Slide direction="down" timeout={1000} in={projectState} mountOnEnter unmountOnExit>
+                        <Paper elevation={0} className={classes.slidebox2} >
+                            <Typography style={{ margin: '5px' }} variant="h3"> Projects Beta </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
+                            <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
+                        </Paper>
+                    </Slide>
+                </Paper>
+
+                
+
             </ThemeProvider>
         </div >
     );
