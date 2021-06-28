@@ -407,14 +407,14 @@ export default function About() {
                             <Button className={classes.bottom} value='about' onClick={() => Slidestate('about')}  > About</Button>
                         </Box>
                         <Box>
-                            <Button value='skills' onClick={() => Slidestate('skills')}  > Skills </Button>
+                            <Button className={classes.bottom} value='skills' onClick={() => Slidestate('skills')}  > Skills </Button>
                         </Box>
-                        {/* <Box>
+                        <Box>
                             <Button className={classes.bottom} value='experiance' onClick={() => Slidestate('experiance')}  > Experiance </Button>
                         </Box>
                         <Box>
                             <Button className={classes.bottom} value='projects' onClick={() => Slidestate('projects')}  > Projects </Button>
-                        </Box> */}
+                        </Box>
 
                     </Box>
 
