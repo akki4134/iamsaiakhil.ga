@@ -1,0 +1,11 @@
+.body {
+    height               : 90vh;
+    background: 'linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%)',}
+
+* {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
