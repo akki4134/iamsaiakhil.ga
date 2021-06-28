@@ -464,7 +464,7 @@ export default function About() {
                         </Slide>
                     </Box>
 
-{/* 
+
                     <Box>
                         <Slide direction="right" timeout={1000} in={skillsState}>
                             <Box className={classes.bgslidebox1} >
@@ -489,7 +489,7 @@ export default function About() {
                                     I like to resolve design problems, create smart user interface and imagine useful interaction, developing rich web experiences & web applications.
                                     When not working or futzing around with code.
                                 </Typography>
-                                <Icon className="fa fa-css3" fontSize="large" style={{ fontSize: 100, }} /> 
+                                <Icon className="fa fa-css3" fontSize="large" style={{ fontSize: 100, }} />
 
                             </Box>
                         </Slide>
@@ -508,11 +508,10 @@ export default function About() {
                                 <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
                             </Box>
                         </Slide>
-                    </Box> */}
+                    </Box>
 
 
 
-{/* 
                     <Box>
                         <Slide direction="right" timeout={1000} in={expState}>
                             <Box className={classes.bgslidebox1} >
@@ -554,10 +553,10 @@ export default function About() {
                                 <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
                             </Box>
                         </Slide>
-                    </Box> */}
+                    </Box>
 
 
-{/* 
+
 
 
                     <Box>
@@ -602,7 +601,7 @@ export default function About() {
                                 <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
                             </Box>
                         </Slide>
-                    </Box> */}
+                    </Box>
 
 
 
