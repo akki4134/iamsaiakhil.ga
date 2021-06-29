@@ -659,7 +659,7 @@ export default function About() {
                             <Typography className={classes.margin} variant="h3"> Projects Alpha </Typography>
                             <Typography className={classes.margin} variant="h5"> {'>'} CRM System </Typography>
                             <Typography className={classes.margin} variant="h5"> {'>'} E-commerce System</Typography>
-                            <Typography className={classes.margin} variant="h5"> {'>'} Order Ordering Platform </Typography>
+                            <Typography className={classes.margin} variant="h5"> {'>'} Order Ordering System </Typography>
                             <Typography className={classes.margin} variant="h5"> {'>'} Dynamic Website Builder </Typography>
                             <Typography className={classes.margin} variant="h5"> {'>'} Office Management System </Typography>
                             <Button className={classes.bottom}> Visit</Button>
