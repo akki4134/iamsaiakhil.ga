@@ -287,13 +287,7 @@ const useStyles = makeStyles((theme) => ({
 
         },
         [theme.breakpoints.up('md')]: {
-            position: "absolute",
-            bottom: "0%",
-            left: "50%",
-            zIndex: "modal",
-            color: '#ffb',
-            alignItems: "center",
-            justifyContent: "center",
+       
 
         },
         [theme.breakpoints.up('lg')]: {
