@@ -97,7 +97,7 @@ const useStyles = makeStyles({
     body: {
         height: '90vh',
         borderBottomRightRadius: '40%',
-        background: 'linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%)',
+        background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)',
 
     },
 });
@@ -268,7 +268,9 @@ export default function Slider() {
                             <Slide direction="right" in={true} timeout={1000} >
                                 <Card className={classes.video}>
                                     <iframe
-                                        src="https://www.youtube.com/embed/qAKf-og-siE?autoplay=1&mute=1&playlist=qAKf-og-siE&loop=1"
+                                        src="https://www.youtube.com/embed/BvDjWFA_9Ds?autoplay=1&mute=1&playlist=BvDjWFA_9Ds&loop=1"
+
+                                        // src="https://www.youtube.com/embed/qAKf-og-siE?autoplay=1&mute=1&playlist=qAKf-og-siE&loop=1"
                                         title="YouTube video player" frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen></iframe>
@@ -436,7 +438,10 @@ export default function Slider() {
                             <Slide direction="up" in={true} timeout={1000} >
                                 <Card className={classes.video}>
                                     <iframe
-                                        src="https://www.youtube.com/embed/B3mOr_xpXWE?autoplay=1&mute=1&playlist=B3mOr_xpXWE&loop=1"
+                                        src="https://www.youtube.com/embed/BvDjWFA_9Ds?autoplay=1&mute=1&playlist=BvDjWFA_9Ds&loop=1"
+
+
+                                        // src="https://www.youtube.com/embed/B3mOr_xpXWE?autoplay=1&mute=1&playlist=B3mOr_xpXWE&loop=1"                                       
                                         title="YouTube video player" frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen></iframe>
@@ -614,8 +619,8 @@ export default function Slider() {
                     <Slide direction="up" in={true} timeout={1000} >
                         <CustomFont style={{ marginLeft: '60px' }} variant="h3">{jobtitle}</CustomFont>
                     </Slide>
-                    <Button className={classes.bottom} component={Link} to="/about"  > GitHub </Button>
-                    <Button className={classes.bottom} component={Link} to="/about" > Blog </Button>
+                    <Button className={classes.bottom} onClick={() => window.location.assign('https://github.com/akki4134')}> GitHub </Button>
+                    <Button className={classes.bottom} component={Link} to="/projects"> Projects </Button>
                 </Box>
                 {/* <Box
                         p={2}

@@ -24,9 +24,7 @@ export default function Root() {
             <div className={classes.root}>
                 <Grid container spacing={0}>
                     <Grid item lg={7} md={7} sm={8} xs={12}>
-
                         <Slider />
-
                     </Grid>
                 </Grid>
             </div >

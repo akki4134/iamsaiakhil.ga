@@ -10,10 +10,13 @@ import NavigationBar from './Components/NavigationBar'
 const App = () => {
   return (
     <>
-      <Router>
-        <NavigationBar />
-        <Routes />
-      </Router>
+      <div className='body'>
+        <Router>
+          <NavigationBar />
+          <Routes />
+        </Router>
+      </div>
+
     </>
   )
 }

@@ -13,8 +13,7 @@ const StyledTabs = withStyles({
         backgroundColor: 'transparent',
         '& > span': {
             maxWidth: 40,
-            width: '100%',
-            backgroundColor: '#000',
+            backgroundColor: 'transparent',
         },
     },
 })((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);
@@ -35,6 +34,8 @@ const StyledTab = withStyles((theme) => ({
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        width: '100%',
+
     },
     menu: {
         background: 'background-image: linear-gradient(to right, #868f96 0%, #596164 100%);',
@@ -69,9 +70,10 @@ export default function CustomizedTabs() {
                 <StyledTabs value={value} variant="scrollable" scrollButtons="auto" onChange={handleChange} aria-label="styled tabs example">
                     <StyledTab component={Link} to="/" label="Home" />
                     <StyledTab component={Link} to="/about" label="Know Me" />
-                    <StyledTab component={Link} to="/about" label="Free Designs" />
+                    <StyledTab component={Link} to="/Projects" label="Projects" />
                     <StyledTab component={Link} to="/about" label="Blog" />
                     <StyledTab component={Link} to="/about" label="Training" />
+                    <StyledTab component={Link} to="/about" label="Free Designs" />
                     <StyledTab component={Link} to="/about" label="Contact" />
                     <StyledTab className={buttonclass.root} component={Link} to="/about" label="Login" />
                 </StyledTabs>
