@@ -6,12 +6,15 @@ import Grid from '@material-ui/core/Grid';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
+import { images } from '../data.json'
+
 // import Card from '@material-ui/core/Card';
 // import CardMedia from '@material-ui/core/CardMedia';
 // import CardActionArea from '@material-ui/core/CardActionArea';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { FaAngleLeft } from 'react-icons/fa'
+
 
 const useStyles = makeStyles((theme) => ({
     test: {
@@ -58,12 +61,11 @@ const useStyles = makeStyles((theme) => ({
         },
 
     },
-    nav:{
+    nav: {
 
     },
-    submain:{
-        
-
+    submain: {
+        marginTop: '50px'
     },
 
     card: {
@@ -254,7 +256,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('xs')]: {
             fontSize: 50,
             '&:hover': {
-                fontSize: 55,
+                color:'#fff',
                 cursor: 'pointer',
             }
 
@@ -262,7 +264,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             fontSize: 50,
             '&:hover': {
-                fontSize: 55,
+                color:'#fff',
                 cursor: 'pointer',
             }
 
@@ -270,7 +272,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             fontSize: 50,
             '&:hover': {
-                fontSize: 55,
+                color:'#fff',
                 cursor: 'pointer',
             }
 
@@ -278,7 +280,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('lg')]: {
             fontSize: 50,
             '&:hover': {
-                fontSize: 55,
+                color:'#fff',
                 cursor: 'pointer',
                 // '&:after': {
                 //     content: '"go Back"',
@@ -449,16 +451,14 @@ const Projects = () => {
                         </Grid>
 
 
-                        <Grid item lg={12} md={12} sm={12} xs={12}>
+
+                        <Grid className={classes.submain} item lg={12} md={12} sm={12} xs={12}>
                             <Splide
                                 options={{
                                     type: 'loop',
                                     gap: '2rem',
-                                    focus  : 'center',
-                                    padding: {
-                                        right: '5rem',
-                                        left : '5rem',
-                                    },
+                                    focus: 'center',
+                                    perPage: 3,
                                     perMove: 1,
                                     autoplay: true,
                                     arrows: 'slider',
@@ -466,26 +466,27 @@ const Projects = () => {
                                     height: '10rem',
                                     cover: true,
                                     breakpoints: {
-                                    
                                     }
                                 }}
-
                             >
-                                <SplideSlide>
-                                    <img src="https://res.cloudinary.com/cakhil/image/upload/v1624386400/iamsaiakhil.ga/IOS_regado.png" alt=" 1" />
-                                </SplideSlide>
-                                <SplideSlide>
-                                    <img src="https://res.cloudinary.com/cakhil/image/upload/v1624386401/iamsaiakhil.ga/Android_flqizw.png" alt=" 2" />
-                                </SplideSlide>
-                                <SplideSlide>
-                                    <img src="https://res.cloudinary.com/cakhil/image/upload/v1624386400/iamsaiakhil.ga/IOS_regado.png" alt=" 1" />
-                                </SplideSlide>
-                                <SplideSlide>
-                                    <img src="https://res.cloudinary.com/cakhil/image/upload/v1624386401/iamsaiakhil.ga/Android_flqizw.png" alt=" 2" />
-                                </SplideSlide>
+                                {images.map((img, key) => {
+                                    return (
+                                        < SplideSlide className={classes.card} >
+                                            <img src={img.imageUrl} alt={img.name} />
+                                        </SplideSlide>
+                                    )
+                                })}
+
                             </Splide>
 
+                            
+
+
+
                         </Grid>
+
+
+
 
                     </Grid>
                 </Slide>
