@@ -1,37 +1,143 @@
 import { useState } from 'react';
 
 import Slide from '@material-ui/core/Slide';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 // import Card from '@material-ui/core/Card';
 // import CardMedia from '@material-ui/core/CardMedia';
 // import CardActionArea from '@material-ui/core/CardActionArea';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { FaBackward } from 'react-icons/fa'
+import { FaAngleLeft } from 'react-icons/fa'
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        height: '90vh',
-        width: '100vw',
-        alignItems: "center",
-        justifyContent: "center",
-        background: 'linear-gradient(to right top, #65dfc9, #6cdbeb)',
-    },
-
-    card: {
+    test: {
         [theme.breakpoints.down('xs')]: {
 
         },
         [theme.breakpoints.down('sm')]: {
 
         },
+        [theme.breakpoints.down('md')]: {
+
+        },
+        [theme.breakpoints.down('lg')]: {
+
+        },
+        [theme.breakpoints.down('xl')]: {
+
+        },
+    },
+    root: {
+        flexGrow: 1,
+        height: '100vh',
+        display: 'flex',
+        alignItems: "center",
+        justify: "center",
+        background: 'linear-gradient(to right top, #65dfc9, #6cdbeb)',
+
+    },
+    main: {
+        [theme.breakpoints.up('xs')]: {
+            marginLeft: '0px'
+        },
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: '0px'
+        },
         [theme.breakpoints.up('md')]: {
+            marginLeft: '40px'
+        },
+        [theme.breakpoints.up('lg')]: {
+            marginLeft: '40px'
+        },
+        [theme.breakpoints.up('xl')]: {
+            marginLeft: '40px'
+        },
+
+    },
+    nav:{
+
+    },
+    submain:{
+        
+
+    },
+
+    card: {
+        [theme.breakpoints.up('xs')]: {
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 15,
+            fontWeight: 800,
+            height: 150,
+            width: 150,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                borderRadius: 150,
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 20,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
+
+        },
+        [theme.breakpoints.up('sm')]: {
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 15,
+            fontWeight: 800,
+            height: 180,
+            width: 180,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                borderRadius: 150,
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 25,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
+
+        },
+        [theme.breakpoints.up('md')]: {
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 15,
+            fontWeight: 800,
+            height: 220,
+            width: 220,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                borderRadius: 150,
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 25,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
 
         },
         [theme.breakpoints.up('lg')]: {
-            
+
             display: 'flex',
             alignItems: "center",
             justifyContent: "center",
@@ -39,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
             fontWeight: 800,
             height: 250,
             width: 250,
-            borderRadius: 30,
+            borderRadius: 150,
             margin: 10,
             backdropFilter: 'blur(2rem)',
             background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
@@ -49,32 +155,159 @@ const useStyles = makeStyles((theme) => ({
                 cursor: 'pointer',
                 fontWeight: 800,
                 fontSize: 35,
-                color:'#000',
+                color: '#fff',
                 textTransform: 'uppercase',
             }
 
         },
-    },
+        [theme.breakpoints.up('xl')]: {
 
-    project: {
-        [theme.breakpoints.down('xs')]: {
-
-        },
-        [theme.breakpoints.down('sm')]: {
-
-        },
-        [theme.breakpoints.up('md')]: {
-
-        },
-        [theme.breakpoints.up('lg')]: {
             display: 'flex',
             alignItems: "center",
             justifyContent: "center",
-            position: "absolute",
-            zIndex: "modal",
-            height: '90vh',
-            width: '100vw',
-            background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+            fontSize: 20,
+            fontWeight: 800,
+            height: 300,
+            width: 300,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                borderRadius: 150,
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 40,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
+
+        },
+
+    },
+
+    services: {
+        display: 'flex',
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+        position: "absolute",
+        zIndex: "modal",
+        top: '9%',
+        left: '0%',
+
+        // [theme.breakpoints.up('xs')]: {
+        //     display: 'flex',
+        //     alignItems: "flex-start",
+        //     justifyContent: "flex-start",
+        //     position: "absolute",
+        //     zIndex: "modal",
+        //     height: '100vh',
+        //     width: '100vw',
+        //     background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+
+        // },
+        // [theme.breakpoints.up('sm')]: {
+        //     display: 'flex',
+        //     alignItems: "flex-start",
+        //     justifyContent: "flex-start",
+        //     position: "absolute",
+        //     zIndex: "modal",
+        //     height: '100vh',
+        //     width: '100vw',
+        //     background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+
+        // },
+        // [theme.breakpoints.up('md')]: {
+        //     display: 'flex',
+        //     alignItems: "flex-start",
+        //     justifyContent: "flex-start",
+        //     position: "absolute",
+        //     zIndex: "modal",
+        //     height: '100vh',
+        //     width: '100vw',
+        //     background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+
+        // },
+        // [theme.breakpoints.up('lg')]: {
+        //     display: 'flex',
+        //     alignItems: "flex-start",
+        //     justifyContent: "flex-start",
+        //     position: "absolute",
+        //     zIndex: "modal",
+        //     height: '100vh',
+        //     width: '100vw',
+        //     background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+        // },
+        // [theme.breakpoints.up('xl')]: {
+        //     display: 'flex',
+        //     alignItems: "flex-start",
+        //     justifyContent: "flex-start",
+        //     position: "absolute",
+        //     zIndex: "modal",
+        //     height: '100vh',
+        //     width: '100vw',
+        //     background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+        // },
+    },
+    backbutton: {
+        [theme.breakpoints.up('xs')]: {
+            fontSize: 50,
+            '&:hover': {
+                fontSize: 55,
+                cursor: 'pointer',
+            }
+
+        },
+        [theme.breakpoints.up('sm')]: {
+            fontSize: 50,
+            '&:hover': {
+                fontSize: 55,
+                cursor: 'pointer',
+            }
+
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: 50,
+            '&:hover': {
+                fontSize: 55,
+                cursor: 'pointer',
+            }
+
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: 50,
+            '&:hover': {
+                fontSize: 55,
+                cursor: 'pointer',
+                // '&:after': {
+                //     content: '"go Back"',
+                //     display: 'block',
+                //     height: 30,
+                //     marginTop: -30,
+
+                // }
+            },
+
+        },
+
+    },
+    h2: {
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 10,
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 10,
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: 10,
+        },
+        [theme.breakpoints.down('lg')]: {
+            fontSize: 10,
+        },
+        [theme.breakpoints.down('xl')]: {
+            fontSize: 40,
+            fontWeight: 800,
         },
     },
 
@@ -83,13 +316,25 @@ const useStyles = makeStyles((theme) => ({
 const Projects = () => {
 
     const [mainState, setmainState] = useState(true)
-
     const [profState, setprofState] = useState(false)
     const [persState, setpersState] = useState(false)
     const [tempState, settempState] = useState(false)
     const [compState, setcompState] = useState(false)
 
     const classes = useStyles()
+
+    const Backbutton = () => {
+
+
+        setprofState(false)
+        setpersState(false)
+        settempState(false)
+        setcompState(false)
+        setTimeout(() => {
+            setmainState(true)
+        }, 1200);
+
+    }
 
     function Slidestate(val) {
 
@@ -143,7 +388,6 @@ const Projects = () => {
 
                     }, 1000);
                 break;
-
             default:
                 alert("error")
         }
@@ -151,62 +395,132 @@ const Projects = () => {
 
     return (
         <div className={classes.root}>
-            <div style={{ display: 'flex', flexDirection: 'row', }}>
-                <Slide className={classes.card} direction="down" timeout={100} in={mainState}>
-                    <div onClick={() => Slidestate('prof')} >
-                        Professinal
-                    </div>
+
+            <Grid className={classes.main} dire container>
+
+                <Grid item lg={3} md={3} sm={3} xs={6}>
+                    <Slide className={classes.card} direction="down" timeout={100} in={mainState}>
+                        <div onClick={() => Slidestate('prof')} >
+                            Professinal
+                        </div>
+                    </Slide>
+
+                </Grid>
+                <Grid item lg={3} md={3} sm={3} xs={6}>
+                    <Slide className={classes.card} direction="down" timeout={500} in={mainState}>
+                        <div onClick={() => Slidestate('pers')} >
+                            Personal
+                        </div>
+                    </Slide>
+
+                </Grid>
+                <Grid item lg={3} md={3} sm={3} xs={6}>
+                    <Slide className={classes.card} direction="down" timeout={800} in={mainState}>
+                        <div onClick={() => Slidestate('temp')} >
+                            Templates
+                        </div>
+                    </Slide>
+
+                </Grid>
+                <Grid item lg={3} md={3} sm={3} xs={6}>
+                    <Slide className={classes.card} direction="down" timeout={1000} in={mainState}>
+                        <div onClick={() => Slidestate('comp')} >
+                            Components
+                        </div>
+                    </Slide>
+                </Grid>
+
+
+
+
+
+
+                <Slide direction="right" timeout={1000} in={profState}>
+                    <Grid container className={classes.services} >
+                        <Grid container direction="row" >
+                            <Grid item lg={2} xs={2}>
+                                <FaAngleLeft onClick={() => Backbutton()} className={classes.backbutton} />
+                            </Grid>
+                            <Grid item lg={10} md={10} sm={10} xs={10}>
+                                <div className={classes.h2}>
+                                    Projects
+                                </div>
+                            </Grid>
+                        </Grid>
+
+
+                        <Grid item lg={12} md={12} sm={12} xs={12}>
+                            <Splide
+                                options={{
+                                    type: 'loop',
+                                    gap: '2rem',
+                                    focus  : 'center',
+                                    padding: {
+                                        right: '5rem',
+                                        left : '5rem',
+                                    },
+                                    perMove: 1,
+                                    autoplay: true,
+                                    arrows: 'slider',
+                                    fixedWidth: '10rem',
+                                    height: '10rem',
+                                    cover: true,
+                                    breakpoints: {
+                                    
+                                    }
+                                }}
+
+                            >
+                                <SplideSlide>
+                                    <img src="https://res.cloudinary.com/cakhil/image/upload/v1624386400/iamsaiakhil.ga/IOS_regado.png" alt=" 1" />
+                                </SplideSlide>
+                                <SplideSlide>
+                                    <img src="https://res.cloudinary.com/cakhil/image/upload/v1624386401/iamsaiakhil.ga/Android_flqizw.png" alt=" 2" />
+                                </SplideSlide>
+                                <SplideSlide>
+                                    <img src="https://res.cloudinary.com/cakhil/image/upload/v1624386400/iamsaiakhil.ga/IOS_regado.png" alt=" 1" />
+                                </SplideSlide>
+                                <SplideSlide>
+                                    <img src="https://res.cloudinary.com/cakhil/image/upload/v1624386401/iamsaiakhil.ga/Android_flqizw.png" alt=" 2" />
+                                </SplideSlide>
+                            </Splide>
+
+                        </Grid>
+
+                    </Grid>
                 </Slide>
-                <Slide className={classes.card} direction="down" timeout={500} in={mainState}>
-                    <div onClick={() => Slidestate('pers')} >
-                        Personal
-                    </div>
+
+                <Slide direction="right" timeout={1000} in={persState}>
+
+                    <Grid className={classes.services} >
+
+                        <FaAngleLeft onClick={() => Backbutton()} className={classes.backbutton} />
+                        custom Templates
+
+                    </Grid>
                 </Slide>
-                <Slide className={classes.card} direction="down" timeout={800} in={mainState}>
-                    <div onClick={() => Slidestate('temp')} >
-                        Templates
-                    </div>
+
+                <Slide direction="right" timeout={1000} in={tempState}>
+                    <Grid className={classes.services} >
+
+                        <FaAngleLeft onClick={() => Backbutton()} className={classes.backbutton} />
+                        custom Templates
+
+                    </Grid>
                 </Slide>
-                <Slide className={classes.card} direction="down" timeout={1000} in={mainState}>
-                    <div onClick={() => Slidestate('comp')} >
-                        Components
-                    </div>
+
+                <Slide direction="right" timeout={1000} in={compState}>
+
+                    <Grid className={classes.services} >
+
+                        <FaAngleLeft onClick={() => Backbutton()} className={classes.backbutton} />
+                        custom Templates
+
+                    </Grid>
                 </Slide>
-            </div>
-
-            <Slide direction="right" timeout={1000} in={profState}>
-
-                <Paper className={classes.project} elevation={0}>
-                    <FaBackward />
-                    Professinal
-                </Paper>
-            </Slide>
 
 
-            <Slide direction="right" timeout={1000} in={persState}>
-
-                <Paper className={classes.project} elevation={0}>
-                    <FaBackward />
-                    Personal
-                </Paper>
-            </Slide>
-
-            <Slide direction="right" timeout={1000} in={tempState}>
-
-                <Paper className={classes.project} elevation={0}>
-                    <FaBackward />
-                    custom Templates
-                </Paper>
-            </Slide>
-
-            <Slide direction="right" timeout={1000} in={compState}>
-
-                <Paper className={classes.project} elevation={0}>
-                    <FaBackward />
-                    custom Components
-                </Paper>
-            </Slide>
-
+            </Grid>
         </div >
     )
 }
