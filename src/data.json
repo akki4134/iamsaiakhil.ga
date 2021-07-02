@@ -1,34 +1,38 @@
 {
-    "images": [
+    "projects": [
         {
+            "sno": "01",
             "id": 8798,
-            "projectname": "p1",
-            "projectsize":"4",
+            "projectname": "CRM System",
+            "projectsize": "4",
             "Position": "software developer",
             "Description": " worked on both payment functionality",
             "imageUrl": "https://res.cloudinary.com/cakhil/image/upload/v1624386401/iamsaiakhil.ga/Android_flqizw.png"
         },
         {
+            "sno": "02",
             "id": 8799,
-            "projectname": "p2",
-            "projectsize":"5",
-            "Position": "frontend developer",
+            "projectname": "Online Food Order",
+            "projectsize": "5",
+            "Position": "frontend and database developer",
             "Description": " worked on both payment functionality",
             "imageUrl": "https://res.cloudinary.com/cakhil/image/upload/v1624386400/iamsaiakhil.ga/IOS_regado.png"
         },
         {
+            "sno": "03",
             "id": 8797,
-            "projectname": "p3",
-            "projectsize":"6",
+            "projectname": "Administaion System",
+            "projectsize": "6",
             "Position": "Full Stack developer",
             "Description": " worked on both payment functionality",
             "imageUrl": "https://res.cloudinary.com/cakhil/image/upload/v1624386401/iamsaiakhil.ga/Android_flqizw.png"
         },
         {
+            "sno": "04",
             "id": 8796,
-            "projectname": "p4",
-            "projectsize":"3",
-            "Position": "Architecture",
+            "projectname": "E-commerce System",
+            "projectsize": "3",
+            "Position": "Architecture and Manage",
             "Description": " worked on both payment functionality",
             "imageUrl": "https://res.cloudinary.com/cakhil/image/upload/v1624386400/iamsaiakhil.ga/IOS_regado.png"
         }

@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
-import { images } from '../data.json'
+import { projects } from '../data.json'
 
 // import Card from '@material-ui/core/Card';
 // import CardMedia from '@material-ui/core/CardMedia';
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     submain: {
-        marginTop: '50px'
+        marginTop: '20px'
     },
 
     card: {
@@ -189,6 +189,123 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+
+    smallcard: {
+        [theme.breakpoints.up('xs')]: {
+
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 10,
+            fontWeight: 800,
+            height: 40,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 12,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
+
+        },
+        [theme.breakpoints.up('sm')]: {
+
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 10,
+            fontWeight: 800,
+            height: 40,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 12,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
+
+        },
+        [theme.breakpoints.up('md')]: {
+
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 15,
+            fontWeight: 800,
+            height: 40,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 20,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
+
+        },
+        [theme.breakpoints.up('lg')]: {
+
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 15,
+            fontWeight: 800,
+            height: 40,
+            width: 250,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 20,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
+
+        },
+        [theme.breakpoints.up('xl')]: {
+
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 15,
+            fontWeight: 800,
+            height: 40,
+            width: 250,
+            borderRadius: 150,
+            margin: 10,
+            backdropFilter: 'blur(2rem)',
+            background: 'linear-gradient(to right bottom,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3))',
+            '&:hover': {
+                background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+                cursor: 'pointer',
+                fontWeight: 800,
+                fontSize: 20,
+                color: '#fff',
+                textTransform: 'uppercase',
+            }
+
+        },
+
+    },
+
     services: {
         display: 'flex',
         alignItems: "flex-start",
@@ -256,7 +373,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('xs')]: {
             fontSize: 50,
             '&:hover': {
-                color:'#fff',
+                color: '#fff',
                 cursor: 'pointer',
             }
 
@@ -264,7 +381,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             fontSize: 50,
             '&:hover': {
-                color:'#fff',
+                color: '#fff',
                 cursor: 'pointer',
             }
 
@@ -272,7 +389,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             fontSize: 50,
             '&:hover': {
-                color:'#fff',
+                color: '#fff',
                 cursor: 'pointer',
             }
 
@@ -280,7 +397,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('lg')]: {
             fontSize: 50,
             '&:hover': {
-                color:'#fff',
+                color: '#fff',
                 cursor: 'pointer',
                 // '&:after': {
                 //     content: '"go Back"',
@@ -295,22 +412,9 @@ const useStyles = makeStyles((theme) => ({
 
     },
     h2: {
-        [theme.breakpoints.down('xs')]: {
-            fontSize: 10,
-        },
-        [theme.breakpoints.down('sm')]: {
-            fontSize: 10,
-        },
-        [theme.breakpoints.down('md')]: {
-            fontSize: 10,
-        },
-        [theme.breakpoints.down('lg')]: {
-            fontSize: 10,
-        },
-        [theme.breakpoints.down('xl')]: {
-            fontSize: 40,
-            fontWeight: 800,
-        },
+        fontSize: 40,
+        fontWeight: 800,
+        color: '#fff'
     },
 
 }));
@@ -322,6 +426,12 @@ const Projects = () => {
     const [persState, setpersState] = useState(false)
     const [tempState, settempState] = useState(false)
     const [compState, setcompState] = useState(false)
+
+
+    const [selectedProjectState, setselectedProjectState] = useState()
+
+    const a = {selectedProjectState}
+
 
     const classes = useStyles()
 
@@ -450,40 +560,62 @@ const Projects = () => {
                             </Grid>
                         </Grid>
 
+                        {projects.map((data) => {
+                            return (
+                                <div>
 
 
-                        <Grid className={classes.submain} item lg={12} md={12} sm={12} xs={12}>
-                            <Splide
-                                options={{
-                                    type: 'loop',
-                                    gap: '2rem',
-                                    focus: 'center',
-                                    perPage: 3,
-                                    perMove: 1,
-                                    autoplay: true,
-                                    arrows: 'slider',
-                                    fixedWidth: '10rem',
-                                    height: '10rem',
-                                    cover: true,
-                                    breakpoints: {
-                                    }
-                                }}
-                            >
-                                {images.map((img, key) => {
-                                    return (
-                                        < SplideSlide className={classes.card} >
-                                            <img src={img.imageUrl} alt={img.name} />
-                                        </SplideSlide>
-                                    )
-                                })}
+                                    <Grid container direction="row" >
+                                        <Grid item lg={12} md={12} sm={12} xs={12}>
+                                            <Slide className={classes.smallcard} direction="down" timeout={100} in={true}>
+                                                <div onClick={() => setselectedProjectState(data.id)} >
+                                                    {data.projectname}
+                                                </div>
+                                            </Slide>
+                                        </Grid>
+                                    </Grid>
+                                    <Slide direction="right" timeout={2000} in={true}>
+                                        <Grid item lg={12} md={12} sm={12} xs={12}>
+                                            {/* {data.projectname}
+                                            {data.projectsize}
+                                            {data.Position} */}
 
-                            </Splide>
+                                           {selectedProjectState}
+                                        </Grid>
+                                    </Slide>
+                                    <Grid className={classes.submain} item lg={6} md={6} sm={6} xs={6}>
+                                        {/* <Splide
+                                            options={{
+                                                type: 'loop',
+                                                gap: '2rem',
+                                                focus: 'center',
+                                                perPage: 3,
+                                                perMove: 1,
+                                                autoplay: true,
+                                                arrows: 'slider',
+                                                fixedWidth: '10rem',
+                                                height: '10rem',
+                                                cover: true,
+                                            }}
+                                        >
 
-                            
+
+                                            < SplideSlide key={data.id} className={classes.card} >
+                                                <img src={data.imageUrl} alt={data.name} />
+                                            </SplideSlide>
+
+
+                                        </Splide> */}
+
+
+                                    </Grid>
 
 
 
-                        </Grid>
+                                </div>
+
+                            )
+                        })}
 
 
 

@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-import Paper from '@material-ui/core/Paper';
-
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import Slide from '@material-ui/core/Slide';
@@ -46,9 +44,11 @@ theme.typography.h2 = {
     },
     [theme.breakpoints.up('lg')]: {
         fontSize: '5rem',
+        color:'#fff',
     },
     [theme.breakpoints.up('xl')]: {
         fontSize: '5rem',
+        color:'#fff',
     },
 };
 theme.typography.h3 = {
@@ -63,9 +63,11 @@ theme.typography.h3 = {
     },
     [theme.breakpoints.up('lg')]: {
         fontSize: '2rem',
+        color:'#fff',
     },
     [theme.breakpoints.up('xl')]: {
         fontSize: '2rem',
+        color:'#fff',
     },
 };
 theme.typography.h4 = {
@@ -97,6 +99,7 @@ theme.typography.h5 = {
     },
     [theme.breakpoints.up('lg')]: {
         fontSize: '1rem',
+        color:'#fff',
 
     },
     [theme.breakpoints.up('xl')]: {
@@ -106,7 +109,9 @@ theme.typography.h5 = {
 
 const useStyles = makeStyles((theme) => ({
     background: {
-        background: 'linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%)',
+        height:'100vh',
+        width:'100vw',
+        background: 'linear-gradient(to right top, #65dfc9, #6cdbeb)',
     },
 
     box: {
@@ -422,7 +427,7 @@ export default function About() {
     }
 
     return (
-        <div>
+        <div className={classes.background}>
             <ThemeProvider theme={theme}>
 
                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" m={1} p={1}>
@@ -446,21 +451,21 @@ export default function About() {
                 </Box>
 
 
-                <Paper>
+                <div>
                     <Slide direction="right" timeout={1000} in={aboutState}>
-                        <Paper elevation={0} className={classes.bgslidebox1} >
+                        <div elevation={0} className={classes.bgslidebox1} >
                             About Me
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="right" timeout={800} in={aboutState}>
-                        <Paper elevation={0} className={classes.bgicon} >
+                        <div elevation={0} className={classes.bgicon} >
                             <AccountCircleOutlinedIcon fontSize="large" style={{ fontSize: 100, }} />
-                        </Paper>
+                        </div>
                     </Slide>
 
 
                     <Slide direction="right" timeout={1000} in={aboutState} mountOnEnter unmountOnExit>
-                        <Paper elevation={0} className={classes.slidebox1} >
+                        <div elevation={0} className={classes.slidebox1} >
                             <Typography style={{ margin: '5px' }} variant="h3"> M.E.R.N Stack Developer</Typography>
                             <Typography style={{ margin: '15px' }} variant="h5">
                                 I'm Sai Akhil, a 26-year-old Indian  Full Stack developer.
@@ -471,117 +476,117 @@ export default function About() {
                                 When not working or futzing around with code.
                             </Typography>
 
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="down" timeout={1000} in={aboutState}>
-                        <Paper elevation={0} className={classes.bgslidebox2} >
+                        <div elevation={0} className={classes.bgslidebox2} >
                             Contact
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="down" timeout={1000} in={aboutState} mountOnEnter unmountOnExit>
-                        <Paper elevation={0} className={classes.slidebox2} >
+                        <div elevation={0} className={classes.slidebox2} >
                             <Typography style={{ margin: '5px' }} variant="h3"> Personal Details </Typography>
                             <Typography style={{ margin: '15px' }} variant="h5">Freelancing : Available </Typography>
                             <Typography style={{ margin: '15px' }} variant="h5">Phone       : 8801007460 </Typography>
                             <Typography style={{ margin: '15px' }} variant="h5">Website     : www.iamsaiakhil.ga </Typography>
                             <Typography style={{ margin: '15px' }} variant="h5">Email       : yellagandulasaiakhil@gmail.com </Typography>
                             <Typography style={{ margin: '15px' }} variant="h5">Location    : Hyderabad, Telangana, India. 500091 </Typography>
-                        </Paper>
+                        </div>
                     </Slide>
-                </Paper>
+                </div>
 
-                <Paper>
+                <div>
                     <Slide direction="right" timeout={1000} in={skillsState}>
-                        <Paper elevation={0} className={classes.bgslidebox1} >
+                        <div elevation={0} className={classes.bgslidebox1} >
                             Techno-
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="right" timeout={800} in={skillsState}>
-                        <Paper elevation={0} className={classes.bgicon} >
+                        <div elevation={0} className={classes.bgicon} >
                             <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="right" timeout={1000} in={skillsState} mountOnEnter unmountOnExit>
-                        <Paper elevation={0} className={classes.slidebox1} >
+                        <div elevation={0} className={classes.slidebox1} >
                             <Typography style={{ margin: '5px' }} variant="h3"> Development </Typography>
-                            <Paper elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
                                 <FaHtml5 className={classes.itemicon} />
                                 <FaCss3Alt className={classes.itemicon} />
                                 <FaNodeJs className={classes.itemicon} />
                                 <SiMaterialUi className={classes.itemicon} />
                                 <FaReact className={classes.itemicon} />
-                            </Paper>
+                            </div>
 
-                            <Paper elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
                                 <FaNode className={classes.itemicon} />
                                 <FaPython className={classes.itemicon} />
                                 <DiNetmagazine className={classes.itemicon} />
                                 <DiDjango className={classes.itemicon} />
                                 <DiNpm className={classes.itemicon} />
-                            </Paper>
-                            <Paper elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
+                            </div>
+                            <div elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
                                 <DiMongodb className={classes.itemicon} />
                                 <SiMysql className={classes.itemicon} />
                                 <DiSqllite className={classes.itemicon} />
                                 <DiFirebase className={classes.itemicon} />
                                 <DiMsqlServer className={classes.itemicon} />
-                            </Paper>
-                        </Paper>
+                            </div>
+                        </div>
 
                     </Slide>
                     <Slide direction="down" timeout={1000} in={skillsState}>
-                        <Paper elevation={0} className={classes.bgslidebox2} >
+                        <div elevation={0} className={classes.bgslidebox2} >
                             Skills-
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="down" timeout={1000} in={skillsState} mountOnEnter unmountOnExit>
-                        <Paper elevation={0} className={classes.slidebox2} >
+                        <div elevation={0} className={classes.slidebox2} >
                             <Typography style={{ margin: '5px' }} variant="h3"> Development </Typography>
 
-                            <Paper elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
                                 <FaGithub className={classes.itemicon} />
                                 <FaGitlab className={classes.itemicon} />
                                 <FaBitbucket className={classes.itemicon} />
                                 <FaGit className={classes.itemicon} />
                                 <FaJira className={classes.itemicon} />
-                            </Paper>
+                            </div>
 
-                            <Paper elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
                                 <SiNetlify className={classes.itemicon} />
                                 <SiHeroku className={classes.itemicon} />
                                 <FaAws className={classes.itemicon} />
                                 <DiGoogleCloudPlatform className={classes.itemicon} />
                                 <FaLinux className={classes.itemicon} />
-                            </Paper>
+                            </div>
 
-                            <Paper elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div elevation={0} style={{ display: 'flex', flexDirection: 'row' }}>
                                 <FaDocker className={classes.itemicon} />
                                 <SiKubernetes className={classes.itemicon} />
                                 <FaJenkins className={classes.itemicon} />
                                 <SiVisualstudiocode className={classes.itemicon} />
                                 <DiAtom className={classes.itemicon} />
-                            </Paper>
+                            </div>
 
-                        </Paper>
+                        </div>
                     </Slide>
-                </Paper>
+                </div>
 
 
 
 
-                <Paper>
+                <div>
                     <Slide direction="right" timeout={1000} in={expState}>
-                        <Paper elevation={0} className={classes.bgslidebox1} >
+                        <div elevation={0} className={classes.bgslidebox1} >
                             Clorder
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="right" timeout={800} in={expState}>
-                        <Paper elevation={0} className={classes.bgicon} >
+                        <div elevation={0} className={classes.bgicon} >
                             <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="right" timeout={1000} in={expState} mountOnEnter unmountOnExit>
-                        <Paper elevation={0} className={classes.slidebox1} >
+                        <div elevation={0} className={classes.slidebox1} >
 
                             <Typography className={classes.margin} variant="h3"> About-
                                 <Link href="https://www.clorder.com/" >
@@ -600,15 +605,15 @@ export default function About() {
 
                             <Typography className={classes.margin} variant="h5"> * Mobile Ordering App Creation </Typography>
 
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="down" timeout={1000} in={expState}>
-                        <Paper elevation={0} className={classes.bgslidebox2} >
+                        <div elevation={0} className={classes.bgslidebox2} >
                             HYQ
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="down" timeout={1000} in={expState} mountOnEnter unmountOnExit>
-                        <Paper elevation={0} className={classes.slidebox2} >
+                        <div elevation={0} className={classes.slidebox2} >
 
                             <Typography className={classes.margin} variant="h3"> About-
                                 <Link href="http://www.hyqindia.com/" >
@@ -629,27 +634,27 @@ export default function About() {
                             <Typography className={classes.margin} variant="h5"> * Exclusive Offers </Typography>
 
                             <Typography className={classes.margin} variant="h5"> * Hastle Free Installation </Typography>
-                        </Paper>
+                        </div>
                     </Slide>
-                </Paper>
+                </div>
 
 
 
 
 
-                <Paper>
+                <div>
                     <Slide direction="right" timeout={1000} in={projectState}>
-                        <Paper elevation={0} className={classes.bgslidebox1} >
+                        <div elevation={0} className={classes.bgslidebox1} >
                             Official
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="right" timeout={800} in={projectState}>
-                        <Paper elevation={0} className={classes.bgicon} >
+                        <div elevation={0} className={classes.bgicon} >
                             <EqualizerIcon fontSize="large" style={{ fontSize: 100, }} />
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="right" timeout={1000} in={projectState} mountOnEnter unmountOnExit>
-                        <Paper elevation={0} className={classes.slidebox1} >
+                        <div elevation={0} className={classes.slidebox1} >
                             <Typography className={classes.margin} variant="h3"> Projects Alpha </Typography>
                             <Typography className={classes.margin} variant="h5"> {'>'} CRM System </Typography>
                             <Typography className={classes.margin} variant="h5"> {'>'} E-commerce System</Typography>
@@ -657,16 +662,16 @@ export default function About() {
                             <Typography className={classes.margin} variant="h5"> {'>'} Dynamic Website Builder </Typography>
                             <Typography className={classes.margin} variant="h5"> {'>'} Office Management System </Typography>
                             <Button className={classes.bottom}> Visit</Button>
-                        </Paper>
+                        </div>
                        
                     </Slide>
                     <Slide direction="down" timeout={1000} in={projectState}>
-                        <Paper elevation={0} className={classes.bgslidebox2} >
+                        <div elevation={0} className={classes.bgslidebox2} >
                             Personal
-                        </Paper>
+                        </div>
                     </Slide>
                     <Slide direction="down" timeout={1000} in={projectState} mountOnEnter unmountOnExit>
-                        <Paper elevation={0} className={classes.slidebox2} >
+                        <div elevation={0} className={classes.slidebox2} >
                             <Typography className={classes.margin} variant="h3"> Projects Beta </Typography>
                        
                             <Typography className={classes.margin} variant="h5"> {'>'} Netflix Clone </Typography>
@@ -675,9 +680,9 @@ export default function About() {
                             <Typography className={classes.margin} variant="h5"> {'>'} React App with Node Api CRUD </Typography>
                             <Typography className={classes.margin} variant="h5"> {'>'} React based Hover Effects Temlates</Typography>
                             <Button className={classes.bottom}> Visit</Button>
-                        </Paper>
+                        </div>
                     </Slide>
-                </Paper>
+                </div>
 
 
 
