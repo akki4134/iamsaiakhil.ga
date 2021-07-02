@@ -442,12 +442,20 @@ const Projects = () => {
 
     const [snumber, setsnumber] = useState()
     const [position, setposition] = useState()
-    const [projectName, setprojectName] = useState()
+    const [projectName, setprojectName] = useState('Click on Projects to View Each Details')
     const [projectImages, setprojectImages] = useState()
     const [projectSize, setprojectSize] = useState()
     const [projectDescripition, setprojectDescripition] = useState()
 
     const classes = useStyles()
+
+
+    // projects.map((daeta, index) => {
+    //     return (
+    //         console.log(daeta)
+    //     )
+    // })
+
 
     const selectedProject = (data) => {
         setsnumber(data.sno)
@@ -456,6 +464,8 @@ const Projects = () => {
         setprojectSize(data.projectsize)
         setprojectName(data.projectname)
         setprojectDescripition(data.description)
+
+
     }
 
     const Backbutton = () => {
@@ -531,7 +541,7 @@ const Projects = () => {
     return (
         <div className={classes.root}>
 
-            <Grid className={classes.main} dire container>
+            <Grid className={classes.main} container>
 
                 <Grid item lg={3} md={3} sm={3} xs={6}>
                     <Slide className={classes.card} direction="down" timeout={100} in={mainState}>
@@ -587,7 +597,7 @@ const Projects = () => {
                             return (
                                 <div>
                                     <Grid container direction="row" >
-                                        <Grid item lg={12} md={12} sm={12} xs={12}>
+                                        <Grid item >
                                             <Slide className={classes.smallcard} direction="down" timeout={100} in={true}>
                                                 <div key={data.id} onClick={() => selectedProject(data)} >
                                                     {data.projectname}
@@ -601,18 +611,18 @@ const Projects = () => {
                         })}
 
                         <Slide direction="right" timeout={2000} in={true}>
-                            <Grid >
-                                <Grid container item lg={12} md={12} sm={12} xs={12}>
-                                    <Grid className={classes.n1} item lg={3} md={3} sm={3} xs={3}>
-                                        {snumber}
-                                    </Grid>
+                            <Grid container >
 
-                                    <Grid item lg={6} md={6} sm={6} xs={6}>
-                                        <div className={classes.h2} >{projectName}</div>
-                                        <div className={classes.h3} >{projectDescripition}</div>
-                                    </Grid>
-                                    <Grid className={classes.submain} item lg={3} md={3} sm={3} xs={3}>
-                                            <Splide
+                                <Grid className={classes.n1} item lg={3} md={3} sm={3} xs={3}>
+                                    {snumber}
+                                </Grid>
+
+                                <Grid item lg={6} md={6} sm={6} xs={6}>
+                                    <div className={classes.h2} >{projectName}</div>
+                                    <div className={classes.h3} >{projectDescripition}</div>
+                                </Grid>
+                                <Grid className={classes.submain} item lg={3} md={3} sm={3} xs={3}>
+                                    {/* <Splide
                                             options={{
                                                 type: 'loop',
                                                 gap: '2rem',
@@ -628,14 +638,13 @@ const Projects = () => {
                                         >
 
 
-                                            < SplideSlide  className={classes.card} >
+                                            < SplideSlide className={classes.card} >
                                                 <img src={projectImages} alt={projectName} />
                                             </SplideSlide>
 
-                                        </Splide>
-
-                                    </Grid>
+                                        </Splide> */}
                                 </Grid>
+
                                 <Grid className={classes.h3} item lg={2} md={2} sm={2} xs={2}>
                                     {position}
                                     {projectSize}
@@ -643,13 +652,6 @@ const Projects = () => {
                             </Grid>
 
                         </Slide>
-                        <Grid item lg={6} md={6} sm={6} xs={6}>
-                     
-
-
-                        </Grid>
-
-
                     </Grid>
                 </Slide>
 
