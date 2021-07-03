@@ -1,5 +1,5 @@
 {
-    "projects": [
+    "professinal": [
         {
             "sno": "01",
             "id": 8798,
@@ -36,5 +36,8 @@
             "description": " worked on both payment functionality",
             "imageUrl": "https://res.cloudinary.com/cakhil/image/upload/v1624386400/iamsaiakhil.ga/IOS_regado.png"
         }
-    ]
+    ],
+    "personal": [],
+    "templates": [],
+    "components": []
 }

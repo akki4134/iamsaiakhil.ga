@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
-import { projects } from '../data.json'
+import jsonData from '../data.json'
 
 // import Card from '@material-ui/core/Card';
 // import CardMedia from '@material-ui/core/CardMedia';
@@ -432,6 +432,10 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+
+
+
+
 const Projects = () => {
 
     const [mainState, setmainState] = useState(true)
@@ -440,22 +444,16 @@ const Projects = () => {
     const [tempState, settempState] = useState(false)
     const [compState, setcompState] = useState(false)
 
-    const [snumber, setsnumber] = useState()
-    const [position, setposition] = useState()
-    const [projectName, setprojectName] = useState('Click on Projects to View Each Details')
-    const [projectImages, setprojectImages] = useState()
-    const [projectSize, setprojectSize] = useState()
-    const [projectDescripition, setprojectDescripition] = useState()
+    const [projectList, setprojectList] = useState([])
+
+    const [snumber, setsnumber] = useState(jsonData.professinal[0].sno)
+    const [position, setposition] = useState(jsonData.professinal[0].position)
+    const [projectName, setprojectName] = useState(jsonData.professinal[0].projectname)
+    const [projectImages, setprojectImages] = useState(jsonData.professinal[0].imageUrl)
+    const [projectSize, setprojectSize] = useState(jsonData.professinal[0].projectsize)
+    const [projectDescripition, setprojectDescripition] = useState(jsonData.professinal[0].description)
 
     const classes = useStyles()
-
-
-    // projects.map((daeta, index) => {
-    //     return (
-    //         console.log(daeta)
-    //     )
-    // })
-
 
     const selectedProject = (data) => {
         setsnumber(data.sno)
@@ -464,9 +462,8 @@ const Projects = () => {
         setprojectSize(data.projectsize)
         setprojectName(data.projectname)
         setprojectDescripition(data.description)
-
-
     }
+
 
     const Backbutton = () => {
 
@@ -484,7 +481,7 @@ const Projects = () => {
     function Slidestate(val) {
 
         switch (val) {
-            case "prof":
+            case "professinal":
                 setmainState(false)
                 setpersState(false)
                 settempState(false)
@@ -493,6 +490,7 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         setprofState(true)
+                        contentprofessinal()
                     }, 1000);
                 break;
 
@@ -505,6 +503,7 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         setpersState(true)
+                        //  contentpersonal()
                     }, 1000);
                 break;
 
@@ -517,6 +516,7 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         settempState(true)
+                        //  contenttemplate()
                     }, 1000);
                 break;
 
@@ -530,13 +530,47 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         setcompState(true)
-
+                        //  contentcomponent()
                     }, 1000);
                 break;
             default:
                 alert("error")
         }
     }
+    function contentprofessinal() {
+        jsonData.professinal.map((content) => {
+            let itemList = [...content.projectname]
+            return (
+                setprojectList([itemList])
+            )
+        }
+        )
+
+    }
+    // function contentpersonal() {
+    //     projects.professinal.map((content) => {
+
+    //         return (
+    //             setprojectList(content.projectname)
+    //         )
+    //     })
+    // }
+    // function contenttemplate() {
+    //     projects.professinal.map((content) => {
+    //         return (
+    //             setprojectList(content.projectname)
+    //         )
+    //     })
+    // }
+    // function contentcomponent() {
+    //     projects.professinal.map((content) => {
+    //         return (
+    //             setprojectList(content.projectname)
+    //         )
+    //     })
+    // }
+
+
 
     return (
         <div className={classes.root}>
@@ -545,7 +579,7 @@ const Projects = () => {
 
                 <Grid item lg={3} md={3} sm={3} xs={6}>
                     <Slide className={classes.card} direction="down" timeout={100} in={mainState}>
-                        <div onClick={() => Slidestate('prof')} >
+                        <div onClick={() => Slidestate('professinal')} >
                             Professinal
                         </div>
                     </Slide>
@@ -565,7 +599,6 @@ const Projects = () => {
                             Templates
                         </div>
                     </Slide>
-
                 </Grid>
                 <Grid item lg={3} md={3} sm={3} xs={6}>
                     <Slide className={classes.card} direction="down" timeout={1000} in={mainState}>
@@ -574,10 +607,6 @@ const Projects = () => {
                         </div>
                     </Slide>
                 </Grid>
-
-
-
-
 
 
                 <Slide direction="right" timeout={1000} in={profState}>
@@ -593,22 +622,11 @@ const Projects = () => {
                             </Grid>
                         </Grid>
 
-                        {projects.map((data, index) => {
-                            return (
-                                <div>
-                                    <Grid container direction="row" >
-                                        <Grid item >
-                                            <Slide className={classes.smallcard} direction="down" timeout={100} in={true}>
-                                                <div key={data.id} onClick={() => selectedProject(data)} >
-                                                    {data.projectname}
-                                                </div>
-                                            </Slide>
-                                        </Grid>
-                                    </Grid>
-                                </div>
-
-                            )
-                        })}
+                        <Grid container direction="row" >
+                            <Grid className={classes.smallcard} item >
+                                {projectList}
+                            </Grid>
+                        </Grid>
 
                         <Slide direction="right" timeout={2000} in={true}>
                             <Grid container >
@@ -622,27 +640,29 @@ const Projects = () => {
                                     <div className={classes.h3} >{projectDescripition}</div>
                                 </Grid>
                                 <Grid className={classes.submain} item lg={3} md={3} sm={3} xs={3}>
-                                    {/* <Splide
-                                            options={{
-                                                type: 'loop',
-                                                gap: '2rem',
-                                                focus: 'center',
-                                                perPage: 3,
-                                                perMove: 1,
-                                                autoplay: true,
-                                                arrows: 'slider',
-                                                fixedWidth: '10rem',
-                                                height: '10rem',
-                                                cover: true,
-                                            }}
-                                        >
+                                    <Splide
+                                        options={{
+                                            type: 'loop',
+                                            gap: '2rem',
+                                            focus: 'center',
+                                            perPage: 3,
+                                            perMove: 1,
+                                            autoplay: true,
+                                            arrows: 'slider',
+                                            fixedWidth: '10rem',
+                                            height: '10rem',
+                                            cover: true,
+                                        }}
+                                    >
 
 
-                                            < SplideSlide className={classes.card} >
-                                                <img src={projectImages} alt={projectName} />
-                                            </SplideSlide>
+                                        < SplideSlide className={classes.card} >
+                                            <img src={projectImages} alt={projectDescripition} />
+                                        </SplideSlide>
 
-                                        </Splide> */}
+                                    </Splide>
+
+
                                 </Grid>
 
                                 <Grid className={classes.h3} item lg={2} md={2} sm={2} xs={2}>
@@ -652,6 +672,8 @@ const Projects = () => {
                             </Grid>
 
                         </Slide>
+
+
                     </Grid>
                 </Slide>
 
