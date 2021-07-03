@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
@@ -445,13 +445,28 @@ const Projects = () => {
     const [tempState, settempState] = useState(false)
     const [compState, setcompState] = useState(false)
 
-    const [snumber, setsnumber] = useState(jsonData.professinal[0].sno)
-    const [position, setposition] = useState(jsonData.professinal[0].position)
-    const [projectName, setprojectName] = useState(jsonData.professinal[0].projectname)
-    const [projectImages, setprojectImages] = useState(jsonData.professinal[0].imageUrl)
-    const [projectSize, setprojectSize] = useState(jsonData.professinal[0].projectsize)
-    const [projectDetails, setprojectDetails] = useState(jsonData.professinal[0].details)
-    const [projectDescripition, setprojectDescripition] = useState(jsonData.professinal[0].description)
+    var [selectedProjectState, setselectedProjectState] = useState()
+
+    const [snumber, setsnumber] = useState()
+    const [position, setposition] = useState()
+    const [projectName, setprojectName] = useState()
+    const [projectImages, setprojectImages] = useState()
+    const [projectSize, setprojectSize] = useState()
+    const [projectDetails, setprojectDetails] = useState()
+    const [projectDescripition, setprojectDescripition] = useState()
+
+ 
+        // useEffect((selectedProjectState) => {
+            
+        //     setsnumber(jsonData[0].sno)
+           
+            
+            
+        // }, [])
+
+       
+
+  
 
     const classes = useStyles()
 
@@ -489,11 +504,11 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         setprofState(true)
-
+                        setselectedProjectState(val)
                     }, 1000);
                 break;
 
-            case "pers":
+            case "personal":
                 setmainState(false)
                 setprofState(false)
                 settempState(false)
@@ -502,7 +517,7 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         setpersState(true)
-
+                        setselectedProjectState(val)
                     }, 1000);
                 break;
 
@@ -515,6 +530,7 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         settempState(true)
+                        setselectedProjectState(val)
                     }, 1000);
                 break;
 
@@ -524,10 +540,10 @@ const Projects = () => {
                 setpersState(false)
                 settempState(false)
 
-
                 setTimeout(
                     function () {
                         setcompState(true)
+                        setselectedProjectState(val)
                     }, 1000);
                 break;
             default:
@@ -550,7 +566,7 @@ const Projects = () => {
                 </Grid>
                 <Grid item lg={3} md={3} sm={3} xs={6}>
                     <Slide className={classes.card} direction="down" timeout={500} in={mainState}>
-                        <div onClick={() => Slidestate('pers')} >
+                        <div onClick={() => Slidestate('personal')} >
                             Personal
                         </div>
                     </Slide>
@@ -620,7 +636,7 @@ const Projects = () => {
                                             perMove: 1,
                                             autoplay: true,
                                             arrows: 'slider',
-                                            fixedWidth: '10rem',
+                                            fixedWidth: '9rem',
                                             height: '10rem',
                                             cover: true,
                                         }}
