@@ -441,8 +441,7 @@ const Projects = () => {
     const [tempState, settempState] = useState(false)
     const [compState, setcompState] = useState(false)
 
-    const [projectList, setprojectList] = useState([
-    ])
+    const [projectList, setprojectList] = useState([])
 
     const [snumber, setsnumber] = useState(jsonData.professinal[0].sno)
     const [position, setposition] = useState(jsonData.professinal[0].position)
@@ -533,12 +532,11 @@ const Projects = () => {
                 alert("error")
         }
     }
+
     function contentprofessinal() {
         jsonData.professinal.map(content => {
-            let itemList = ([content.projectname])
             return (
-                setprojectList([itemList])
-
+                setprojectList([content.projectname])
             )
         })
     }
