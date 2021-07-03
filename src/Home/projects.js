@@ -64,9 +64,7 @@ const useStyles = makeStyles((theme) => ({
     nav: {
 
     },
-    submain: {
-        marginTop: '20px'
-    },
+
 
     card: {
         [theme.breakpoints.up('xs')]: {
@@ -305,6 +303,12 @@ const useStyles = makeStyles((theme) => ({
         },
 
     },
+    imgcard: {
+        borderRadius: 30,
+        '&:hover': {
+            cursor: 'pointer',
+        }
+    },
 
     services: {
         display: 'flex',
@@ -413,7 +417,7 @@ const useStyles = makeStyles((theme) => ({
     },
     n1: {
 
-        fontSize: 200,
+        fontSize: 150,
         fontWeight: 800,
         color: 'rgba(230, 230, 230, 0.5)'
     },
@@ -441,13 +445,12 @@ const Projects = () => {
     const [tempState, settempState] = useState(false)
     const [compState, setcompState] = useState(false)
 
-    const [projectList, setprojectList] = useState([])
-
     const [snumber, setsnumber] = useState(jsonData.professinal[0].sno)
     const [position, setposition] = useState(jsonData.professinal[0].position)
     const [projectName, setprojectName] = useState(jsonData.professinal[0].projectname)
     const [projectImages, setprojectImages] = useState(jsonData.professinal[0].imageUrl)
     const [projectSize, setprojectSize] = useState(jsonData.professinal[0].projectsize)
+    const [projectDetails, setprojectDetails] = useState(jsonData.professinal[0].details)
     const [projectDescripition, setprojectDescripition] = useState(jsonData.professinal[0].description)
 
     const classes = useStyles()
@@ -455,6 +458,7 @@ const Projects = () => {
     const selectedProject = (data) => {
         setsnumber(data.sno)
         setposition(data.position)
+        setprojectDetails(data.details)
         setprojectImages(data.imageUrl)
         setprojectSize(data.projectsize)
         setprojectName(data.projectname)
@@ -485,7 +489,7 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         setprofState(true)
-                        contentprofessinal()
+
                     }, 1000);
                 break;
 
@@ -498,7 +502,7 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         setpersState(true)
-                        //  contentpersonal()
+
                     }, 1000);
                 break;
 
@@ -511,7 +515,6 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         settempState(true)
-                        //  contenttemplate()
                     }, 1000);
                 break;
 
@@ -525,45 +528,12 @@ const Projects = () => {
                 setTimeout(
                     function () {
                         setcompState(true)
-                        //  contentcomponent()
                     }, 1000);
                 break;
             default:
                 alert("error")
         }
     }
-
-    function contentprofessinal() {
-        jsonData.professinal.map(content => {
-            return (
-                setprojectList([content.projectname])
-            )
-        })
-    }
-    // function contentpersonal() {
-    //     projects.professinal.map((content) => {
-
-    //         return (
-    //             setprojectList(content.projectname)
-    //         )
-    //     })
-    // }
-    // function contenttemplate() {
-    //     projects.professinal.map((content) => {
-    //         return (
-    //             setprojectList(content.projectname)
-    //         )
-    //     })
-    // }
-    // function contentcomponent() {
-    //     projects.professinal.map((content) => {
-    //         return (
-    //             setprojectList(content.projectname)
-    //         )
-    //     })
-    // }
-
-
 
     return (
         <div className={classes.root}>
@@ -604,6 +574,7 @@ const Projects = () => {
 
                 <Slide direction="right" timeout={1000} in={profState}>
                     <Grid container className={classes.services} >
+
                         <Grid container direction="row" >
                             <Grid item lg={2} xs={2}>
                                 <FaAngleLeft onClick={() => Backbutton()} className={classes.backbutton} />
@@ -616,23 +587,30 @@ const Projects = () => {
                         </Grid>
 
                         <Grid container direction="row" >
-                            <Grid className={classes.smallcard} item >
-                                {projectList}
-                            </Grid>
+                            {jsonData.professinal.map(content => {
+                                return (
+                                    <Grid className={classes.smallcard} item >
+                                        <div styles={{ display: 'flex' }} onClick={() => selectedProject(content)} >
+                                            {content.projectname}
+                                        </div>
+                                    </Grid>
+                                )
+                            })}
                         </Grid>
 
                         <Slide direction="right" timeout={2000} in={true}>
                             <Grid container >
 
-                                <Grid className={classes.n1} item lg={3} md={3} sm={3} xs={3}>
+                                <Grid className={classes.n1} item lg={2} md={2} sm={2} xs={2}>
                                     {snumber}
                                 </Grid>
 
-                                <Grid item lg={6} md={6} sm={6} xs={6}>
+                                <Grid item lg={5} md={6} sm={6} xs={6}>
                                     <div className={classes.h2} >{projectName}</div>
+                                    <div className={classes.h3} >Team Size - {projectSize} members</div>
                                     <div className={classes.h3} >{projectDescripition}</div>
                                 </Grid>
-                                <Grid className={classes.submain} item lg={3} md={3} sm={3} xs={3}>
+                                <Grid item lg={5} md={4} sm={4} xs={4}>
                                     <Splide
                                         options={{
                                             type: 'loop',
@@ -649,7 +627,7 @@ const Projects = () => {
                                     >
 
 
-                                        < SplideSlide className={classes.card} >
+                                        < SplideSlide className={classes.imgcard} >
                                             <img src={projectImages} alt={projectDescripition} />
                                         </SplideSlide>
 
@@ -658,9 +636,11 @@ const Projects = () => {
 
                                 </Grid>
 
-                                <Grid className={classes.h3} item lg={2} md={2} sm={2} xs={2}>
+                                <Grid className={classes.h3} item>
                                     {position}
-                                    {projectSize}
+                                </Grid>
+                                <Grid className={classes.h3} item>
+                                    {projectDetails}
                                 </Grid>
                             </Grid>
 
