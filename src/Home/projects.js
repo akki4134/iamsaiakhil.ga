@@ -442,13 +442,6 @@ const Projects = () => {
     const [compState, setcompState] = useState(false)
 
     const [projectList, setprojectList] = useState([
-        // sno: '',
-        // id: '',
-        // projectname: '',
-        // projectsize: '',
-        // position: '',
-        // description: '',
-        // imageUrl: ''
     ])
 
     const [snumber, setsnumber] = useState(jsonData.professinal[0].sno)
@@ -541,13 +534,13 @@ const Projects = () => {
         }
     }
     function contentprofessinal() {
+        jsonData.professinal.map(content => {
+            let itemList = ([content.projectname])
+            return (
+                setprojectList([itemList])
 
-        const itemList = jsonData.professinal.map(content => {
-            return <div>{content.projectname}</div>
-          })
-        // setprojectList([jsonData.professinal.map(content => {
-        //       content.projectname]
-        // })) 
+            )
+        })
     }
     // function contentpersonal() {
     //     projects.professinal.map((content) => {
