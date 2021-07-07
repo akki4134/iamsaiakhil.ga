@@ -447,26 +447,14 @@ const Projects = () => {
 
     var [selectedProjectState, setselectedProjectState] = useState()
 
-    const [snumber, setsnumber] = useState()
-    const [position, setposition] = useState()
-    const [projectName, setprojectName] = useState()
+    const [snumber, setsnumber] = useState(jsonData.professinal.sno)
+    const [position, setposition] = useState(jsonData.professinal.position)
+    const [projectName, setprojectName] = useState(jsonData.professinal.details)
     const [projectImages, setprojectImages] = useState()
     const [projectSize, setprojectSize] = useState()
     const [projectDetails, setprojectDetails] = useState()
     const [projectDescripition, setprojectDescripition] = useState()
 
- 
-        // useEffect((selectedProjectState) => {
-            
-        //     setsnumber(jsonData[0].sno)
-           
-            
-            
-        // }, [])
-
-       
-
-  
 
     const classes = useStyles()
 
