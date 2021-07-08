@@ -447,13 +447,13 @@ const Projects = () => {
 
     var [selectedProjectState, setselectedProjectState] = useState()
 
-    const [snumber, setsnumber] = useState(jsonData.professinal.sno)
-    const [position, setposition] = useState(jsonData.professinal.position)
-    const [projectName, setprojectName] = useState(jsonData.professinal.details)
-    const [projectImages, setprojectImages] = useState()
-    const [projectSize, setprojectSize] = useState()
-    const [projectDetails, setprojectDetails] = useState()
-    const [projectDescripition, setprojectDescripition] = useState()
+    const [snumber, setsnumber] = useState(jsonData.professinal[0].sno)
+    const [position, setposition] = useState(jsonData.professinal[0].position)
+    const [projectName, setprojectName] = useState(jsonData.professinal[0].projectname)
+    const [projectImages, setprojectImages] = useState(jsonData.professinal[0].imageUrl)
+    const [projectSize, setprojectSize] = useState(jsonData.professinal[0].projectsize)
+    const [projectDetails, setprojectDetails] = useState(jsonData.professinal[0].details)
+    const [projectDescripition, setprojectDescripition] = useState(jsonData.professinal[0].description)
 
 
     const classes = useStyles()

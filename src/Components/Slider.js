@@ -97,7 +97,7 @@ const useStyles = makeStyles({
     body: {
         height: '90vh',
         borderBottomRightRadius: '40%',
-        background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)',
+        background: 'linear-gradient(to right top, #65dfc9, #6cdbeb)',
 
     },
 });

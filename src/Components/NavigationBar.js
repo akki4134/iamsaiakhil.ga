@@ -34,7 +34,7 @@ const StyledTab = withStyles((theme) => ({
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        width: '100%',
+        width: '100vw',
 
     },
     menu: {
@@ -50,7 +50,8 @@ const bottonStyles = makeStyles({
         color: 'white',
         margin: 5,
         marginLeft: '80px',
-        zIndex: "modal"
+        zIndex: "modal",
+        
     },
 
 });
