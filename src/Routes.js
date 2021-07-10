@@ -1,9 +1,9 @@
 
-import { 
+import {
     Switch,
     Route,
-  } from 'react-router-dom';
- 
+} from 'react-router-dom';
+
 import HomeScreen from './Home/root'
 import AboutScreen from './Home/about'
 import LoginScreen from './Home/login'
@@ -14,7 +14,7 @@ const Routes = () => {
     return (
         <Switch>
             <Route path='/' exact component={HomeScreen} />
-            <Route path='/login' component={AboutScreen} />
+            <Route path='/login' component={LoginScreen} />
             <Route path='/about' component={AboutScreen} />
             <Route path='/projects' component={ProjectScreen} />
             <Route path='/error' component={ErrorScreen} />
