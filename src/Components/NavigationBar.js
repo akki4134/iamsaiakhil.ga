@@ -75,7 +75,7 @@ export default function CustomizedTabs() {
                     <StyledTab component={Link} to="/about" label="Blog" />
                     <StyledTab component={Link} to="/about" label="Training" />
                     <StyledTab component={Link} to="/about" label="Free Designs" />
-                    <StyledTab component={Link} to="/about" label="Contact" />
+                    <StyledTab component={Link} to="/bloghome" label="Contact" />
                     <StyledTab component={Link} to="/login" label="Login"  className={buttonclass.root} />
                 </StyledTabs>
             </div>

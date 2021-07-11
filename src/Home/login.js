@@ -1,4 +1,8 @@
 import { useState } from 'react';
+
+import Base_URL from '../Helpers/statics';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
 import './Styles/login.css'
@@ -35,26 +39,39 @@ const useStyles = makeStyles((theme) => ({
 
 const Login = () => {
 
-    const [username, setusername] = useState()
-    const [password, setpassword] = useState()
+    const [usernamestate, setusername] = useState()
+    const [passwordstate, setpassword] = useState()
 
-    const signin = async() => {
+    let history = useHistory();
 
-        console.log(username, password)
+    const signin = async () => {
 
-        
-        let result = await fetch("http://localhost:8080/api/user/login", {
-            method: 'POST',
-            header: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(username, password)
+        // console.log(username, password)
+        // let result = await fetch("http://localhost:8080/api/user/login", {
+        //     method: 'POST',
+        //     header: {
+        //         "Content-Type": "application/json",
+        //         "Accept": "application/json"
+        //     },
+        //     body: JSON.stringify(username, password)
+        // })
+        // result = await result.json()
+
+
+        const result = axios.post(`$(Base_URL) $(/login)`, {
+            username: usernamestate,
+            password: passwordstate,
         })
-        result = await result.json()
-        localStorage.setItem("user-info", JSON.stringify(result))
-        // history.push("/blogHome")
+            .then(function (response) {
+                console.log(response)
+                history.push('/bloghome')
+            })
+            .catch(function (error) {
+                console.log(error)
+            });
 
+        // localStorage.setItem("user-info", JSON.stringify(result))
+         
     }
 
 
@@ -69,7 +86,7 @@ const Login = () => {
                     </div> */}
                     <form>
                         <input type="text" onChange={(e) => setusername(e.target.value)} id="login" className="fadeIn second" name="login" placeholder="username" />
-                        <input type="password" onChange={(e) => setpassword(e.target.value)} id="password" className="fadeIn third" name="login" placeholder="password" />
+                        <input type="password" onChange={(e) => setpassword(e.target.value)} id="password" autoComplete="on" className="fadeIn third" name="password" placeholder="password" />
                         <input type="button" onClick={() => signin()} className="fadeIn fourth" value="Log In" />
                     </form>
                 </div>
